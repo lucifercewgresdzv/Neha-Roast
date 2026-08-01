@@ -1,0 +1,313 @@
+/* ---------- GOOGLE FONT ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Quicksand',sans-serif;
+}
+
+body{
+
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#ffeaf4;
+position:relative;
+
+}
+
+/* Background stripes */
+
+.bg{
+
+position:fixed;
+inset:0;
+
+background:
+repeating-linear-gradient(
+45deg,
+#ffd8e8 0px,
+#ffd8e8 40px,
+#ffeef6 40px,
+#ffeef6 80px
+);
+
+z-index:-3;
+
+animation:bgMove 18s linear infinite;
+
+}
+
+@keyframes bgMove{
+
+0%{
+background-position:0 0;
+}
+
+100%{
+background-position:300px 300px;
+}
+
+}
+
+/* Floating hearts */
+
+#hearts{
+
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:24px;
+
+animation:floatHeart linear forwards;
+
+opacity:.8;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(110vh) scale(.4);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120px) scale(1.2) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Card */
+
+.card{
+
+width:min(90%,420px);
+
+background:rgba(255,255,255,.75);
+
+backdrop-filter:blur(18px);
+
+border-radius:28px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:
+0 25px 60px rgba(255,122,170,.25);
+
+border:2px solid rgba(255,255,255,.6);
+
+animation:pop .8s ease;
+
+}
+
+@keyframes pop{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px) scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+.emoji{
+
+font-size:64px;
+
+animation:bounce 2s infinite;
+
+margin-bottom:10px;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+h1{
+
+color:#ff5b9b;
+
+font-size:36px;
+
+margin-bottom:18px;
+
+}
+
+p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#555;
+
+margin-bottom:30px;
+
+}
+
+button{
+
+border:none;
+
+outline:none;
+
+padding:16px 38px;
+
+border-radius:999px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:700;
+
+background:linear-gradient(135deg,#ff77a8,#ff4d8f);
+
+color:white;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(255,77,143,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+}
+
+button:active{
+
+transform:scale(.96);
+
+}
+
+/* Cute corner decorations */
+
+body::before{
+
+content:"🌸";
+
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+font-size:40px;
+
+animation:spinSlow 10s linear infinite;
+
+}
+
+body::after{
+
+content:"🎀";
+
+position:absolute;
+
+right:20px;
+
+bottom:20px;
+
+font-size:42px;
+
+animation:spinSlow 10s linear infinite reverse;
+
+}
+
+@keyframes spinSlow{
+
+from{
+
+transform:rotate(0);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.card{
+
+padding:28px;
+
+}
+
+h1{
+
+font-size:30px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
