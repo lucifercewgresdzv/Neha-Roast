@@ -64,20 +64,23 @@ z-index:5;
 }
 
 .letter{
-
 position:absolute;
 left:20px;
-top:40px;
+top:100px;
 width:260px;
 height:150px;
 background:white;
 border-radius:12px;
 padding:18px;
 text-align:center;
-transition:1s;
-z-index:2;
 box-shadow:0 10px 25px rgba(0,0,0,.15);
 
+transform:translateY(90px);
+opacity:0;
+
+transition:all .8s ease;
+
+z-index:1;
 }
 
 .letter h2{
@@ -99,7 +102,11 @@ transform:rotateX(180deg);
 
 .open .letter{
 
-transform:translateY(-120px);
+transform:translateY(-90px);
+
+opacity:1;
+
+z-index:10;
 
 }
 
